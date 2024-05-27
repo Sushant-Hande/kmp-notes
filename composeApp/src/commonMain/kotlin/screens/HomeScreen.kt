@@ -28,10 +28,12 @@ import models.Filter
 import models.Note
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.stringResource
+import org.koin.compose.koinInject
+import viewmodel.NotesViewModel
 
 @OptIn(ExperimentalResourceApi::class, ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen() {
+fun HomeScreen(notesViewModel: NotesViewModel = koinInject()) {
     val notes = listOf(
         Note(
             title = "Tax payment before 15th Jan",
